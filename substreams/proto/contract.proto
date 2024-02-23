@@ -1,0 +1,40 @@
+syntax = "proto3";
+
+import "google/protobuf/timestamp.proto";
+
+package contract.v1;
+
+message Events {
+    repeated ModelAccountCreated model_account_createds = 1;
+    repeated ModelListedForSale model_listed_for_sales = 2;
+    repeated ModelPurchased model_purchaseds = 3;
+}
+
+message ModelAccountCreated {
+    string evt_tx_hash = 1;
+    uint32 evt_index = 2;
+    google.protobuf.Timestamp evt_block_time = 3;
+    uint64 evt_block_number = 4;
+    string model_id = 5;
+    bytes tba = 6;
+}
+
+message ModelListedForSale {
+    string evt_tx_hash = 1;
+    uint32 evt_index = 2;
+    google.protobuf.Timestamp evt_block_time = 3;
+    uint64 evt_block_number = 4;
+    string model_id = 5;
+    bytes tba = 6;
+    string price = 7;
+}
+
+message ModelPurchased {
+    string evt_tx_hash = 1;
+    uint32 evt_index = 2;
+    google.protobuf.Timestamp evt_block_time = 3;
+    uint64 evt_block_number = 4;
+    string model_id = 5;
+    bytes tba = 6;
+    bytes new_owner = 7;
+}

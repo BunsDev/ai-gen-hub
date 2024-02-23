@@ -1,0 +1,29 @@
+type model_account_created @entity {
+    id: ID!
+    evt_tx_hash: String!
+    evt_index: BigInt!
+    evt_block_time: String!
+    evt_block_number: BigInt!
+    model_id: BigDecimal!
+    tba: String!
+}
+type model_listed_for_sale @entity {
+    id: ID!
+    evt_tx_hash: String!
+    evt_index: BigInt!
+    evt_block_time: String!
+    evt_block_number: BigInt!
+    model_id: BigDecimal!
+    price: BigDecimal!
+    tba: String!
+}
+type model_purchased @entity {
+    id: ID!
+    evt_tx_hash: String!
+    evt_index: BigInt!
+    evt_block_time: String!
+    evt_block_number: BigInt!
+    model_id: BigDecimal!
+    new_owner: String!
+    tba: String!
+}
